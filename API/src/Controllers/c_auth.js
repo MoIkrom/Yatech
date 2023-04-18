@@ -77,13 +77,13 @@ module.exports = {
       const payload = {
         user_id: checkEmail.data[0].id,
       };
-      const token = jwt.sign(payload, process.env.SECRET_KEY, {
+      const token = jwt.sign(payload, "yatech-app-v1", {
         expiresIn: "1d",
-        issuer: process.env.ISSUER,
+        issuer: "yatech-app-v1-issuer",
       });
-      const refreshToken = jwt.sign(payload, process.env.SECRET_KEY_REFRESH, {
+      const refreshToken = jwt.sign(payload, "yatech-app-v1-Refresh_Token", {
         expiresIn: "3d",
-        issuer: process.env.ISSUER,
+        issuer: "yatech-app-v1-issuer",
       });
 
       const result = {
@@ -123,7 +123,7 @@ module.exports = {
       let payload;
       let token;
       let newRefreshToken;
-      jwt.verify(refreshToken, process.env.SECRET_KEY_REFRESH, (err, res) => {
+      jwt.verify(refreshToken, "yatech-app-v1-Refresh_Token", (err, res) => {
         if (err) {
           return wrapper.response(response, 400, "Refresh Token Cannot be Empty !");
         }
@@ -131,14 +131,14 @@ module.exports = {
           user_id: res.user_id,
         };
 
-        token = jwt.sign(payload, process.env.SECRET_KEY, {
+        token = jwt.sign(payload, "yatech-app-v1", {
           expiresIn: "1d",
-          issuer: process.env.ISSUER,
+          issuer: "yatech-app-v1-issuer",
         });
 
-        newRefreshToken = jwt.sign(payload, process.env.SECRET_KEY_REFRESH, {
+        newRefreshToken = jwt.sign(payload, "yatech-app-v1-Refresh_Token", {
           expiresIn: "3d",
-          issuer: process.env.ISSUER,
+          issuer: "yatech-app-v1-issuer",
         });
       });
       return wrapper.response(response, 200, "Success Refresh Token!", {
