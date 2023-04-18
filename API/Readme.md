@@ -29,28 +29,12 @@ https://github.com/MoIkrom/Yatech.git
 $ npm install
 ```
 
-3. Add .env
-
-```sh
-   DB_PORT = 8080
-   DB_HOST_DEV="Your DB_HOST"
-   DB_USER_DEV="Your DB_USER_DEV"
-   DB_NAME_DEV="Your DB_NAME_DEV"
-   DB_PASS_DEV="Your DB_PASS_DEV"
-   DB_PORT="Your DB_PORT"
-   SECRET_KEY="Your SECRET_KEY"
-   ISSUER = "Your ISSUER"
-```
-
-4. Start App
+3. Start App
 
 ```sh
    $ npm run dev
 ```
 
-5. Gayoe Coffee is Running
-
 ## Related Project
 
-- Repository Frontend [`here`](https://github.com/MoIkrom/REACT---COFFEE-GAYOE)
-- Repository Mobile Apps [`here`](https://github.com/MoIkrom/New-Coffee-Gayoe/tree/master/GayoeApps)
+- Posmant Documentation [`here`](https://documenter.getpostman.com/view/23228624/2s93XzyP3N)
